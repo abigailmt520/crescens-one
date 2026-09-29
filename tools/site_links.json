@@ -1,0 +1,4 @@
+{
+  "_说明": "一页站的去处。列在这里的才上页面：有地址就显示，没地址就不列。可用的键：pg_site（一条）、accounts（若干条）、mail。pg_site 与 accounts 的每一条要有 zh、en、url 三项。邮箱的用户与域名两段分开写，完整地址不写进仓里。",
+  "mail": {"zh": "邮箱", "en": "Email", "user": "crescens.one", "host": "gmail.com"}
+}

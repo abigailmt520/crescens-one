@@ -1,0 +1,23 @@
+# crescens-one 凭证审计 allowlist（STUDIO-002）：路径<TAB>行内容哈希(sha256前16位)<TAB>命中词；行一变即失效须重审。
+# 只有一组：审计脚本自身 10 处（词表正则与自测样例）。条目自 proving-ground tools/audit_allowlist.tsv 第二组逐字复制，
+# 两仓的 tools/audit_push.py 逐字相同，所以行哈希相同。2026-09-29 CC 复制，STUDIO-002 补丁1 追认；新增条目仍须 CSO。
+# tools/audit_push.py:6
+tools/audit_push.py	ef5fc12a08ec4452	secret
+# tools/audit_push.py:29
+tools/audit_push.py	1417fed212bb4ea2	api_key
+# tools/audit_push.py:29
+tools/audit_push.py	1417fed212bb4ea2	deepseek_api_key
+# tools/audit_push.py:29
+tools/audit_push.py	1417fed212bb4ea2	gemini_api_key
+# tools/audit_push.py:29
+tools/audit_push.py	1417fed212bb4ea2	openai_api_key
+# tools/audit_push.py:30
+tools/audit_push.py	be8b440358ba8993	authorization
+# tools/audit_push.py:30
+tools/audit_push.py	be8b440358ba8993	password
+# tools/audit_push.py:30
+tools/audit_push.py	be8b440358ba8993	secret
+# tools/audit_push.py:30
+tools/audit_push.py	be8b440358ba8993	x-goog
+# tools/audit_push.py:109
+tools/audit_push.py	3c9adcfae2c64895	password

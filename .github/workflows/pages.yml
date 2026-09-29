@@ -1,0 +1,36 @@
+# GitHub Pages 部署（STUDIO-002 §3，补丁1 启用）：推到 main 即部署，也可手动触发。
+# 部署前的检查：页面与生成器一致；已列的去处地址都不为空（--strict）。
+# 自定义域名在仓设置的 Pages 里配；site/CNAME 只是留底，Actions 部署不读它。
+name: pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: 页面与生成器一致，已列的去处都有地址
+        run: python3 tools/build_site.py --check --strict
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
