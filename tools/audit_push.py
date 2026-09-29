@@ -79,7 +79,7 @@ def scan(ref, rules):
                 scan_blob(path, data, rules, hits, used)
     else:
         for path in sh("git", "ls-files", "-z", "--cached", "--others", "--exclude-standard").split("\0"):
-            if path and os.path.isfile(path) and not os.path.islink(path):   # 软链不跟读：与 --ref 口径一致（git 只存链接路径，目标文件按本名另扫）
+            if path and os.path.isfile(path) and not os.path.islink(path):   # 软链不跟读：与 --ref 口径一致（git 只存链接路径，目标文件按自身路径另扫）
                 with open(path, "rb") as f:
                     scan_blob(path, f.read(), rules, hits, used)
     return hits, used

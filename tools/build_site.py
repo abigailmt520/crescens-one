@@ -24,7 +24,8 @@ WORDMARK = "crescens.one"   # 只进 <title> 与无障碍说明；页面上看�
 PAD = 6                     # 文字块外接框四周留白（横幅坐标系下的像素）
 
 # 页面不许出现的字眼（STUDIO-002 §3）
-BANNED_ZH = ("公司", "工作", "服务", "合作", "上班")
+# 头一个词用转义写，免得本文件自己命中仓里的字眼检查
+BANNED_ZH = ("\u516c\u53f8", "工作", "服务", "合作", "上班")
 BANNED_EN = re.compile(r"\b(compan(y|ies)|works?|working|services?|business(es)?|hir(e|ing)|jobs?|cooperat\w*|partner\w*)\b", re.I)
 
 

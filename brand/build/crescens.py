@@ -122,7 +122,7 @@ def wordmark(x, y, size, pal=PAL_NIGHT, moon_o=True):
 
 
 TAGLINE = {
-    # one idea, two voices: 花未全开月未圆（蔡襄句，曾国藩以之名"求阙"之道）— the state just before fullness holds the most
+    # one idea, two voices: 花未全开月未圆（蔡襄句，曾国藩"求阙"之道取意于此）— the state just before fullness holds the most
     "zh": ("生长 · 新月 · 唯一", "花未全开月未圆"),
     "en": ("growing · crescent · one", "the bud not yet open, the moon not yet full"),
 }
