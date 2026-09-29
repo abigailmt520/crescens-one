@@ -7,6 +7,7 @@
   字标与两行字＝ brand/crescens/night-{zh,en}/banner-youtube-2560x1440.svg 里文字块的轮廓，内联
   两声文案   ＝ brand/build/crescens.py 的 TAGLINE（只用来写无障碍说明与页面描述，不画成字）
 去处读 tools/site_links.json：列在里面且有地址的才上页面，没地址的不列（STUDIO-002 补丁1 §2）。
+accounts 里标了 "text": true 的一条没有网址，只列文字、不带链接。
 邮箱的用户与域名两段分开写进页面，由页面脚本拼接，完整地址不落盘。
 
 用法（任意目录执行）：
@@ -122,6 +123,8 @@ def two(item, cls=""):
 
 
 def dest(item):
+    if item.get("text"):
+        return two(item)
     return f'<a href="{html.escape(item["url"], quote=True)}" rel="noopener">{two(item)}</a>'
 
 
@@ -130,9 +133,9 @@ def build():
     links = json.loads(read(ROOT, "tools", "site_links.json"))
     blocks = {lang: text_block(lang) for lang in ("zh", "en")}
     listed = ([links["pg_site"]] if "pg_site" in links else []) + list(links.get("accounts", []))
-    empty = [i.get("en") or i.get("zh") or "?" for i in listed if not i.get("url")]
+    empty = [i.get("en") or i.get("zh") or "?" for i in listed if not i.get("url") and not i.get("text")]
     site = [i for i in listed[:1] if "pg_site" in links and i.get("url")]
-    accts = [i for i in links.get("accounts", []) if i.get("url")]
+    accts = [i for i in links.get("accounts", []) if i.get("url") or i.get("text")]
     mail = links.get("mail")
     if mail and not (mail.get("user") and mail.get("host")):
         empty.append("mail")
