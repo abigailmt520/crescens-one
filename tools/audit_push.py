@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""audit_push.py —— proving-ground 推送前凭证审计（PG-002-X2 补丁1 §3；仅标准库）。
-复制自 dream-os 00_portfolio/tools/audit_push.py（ONE-015 补丁6 §1，sha256 前 16 位 d6703c01cae7751b）；只改了 allowlist 路径与本说明里的路径。
+"""audit_push.py —— proving-ground 推送前凭证审计（内部工单 §3；仅标准库）。
+复制自 dream-os 00_portfolio/tools/audit_push.py（内部工单 §1，sha256 前 16 位 d6703c01cae7751b）；只改了 allowlist 路径与本说明里的路径。
 
 词表沿用 FORGE 仓 tools/audit_secrets.py；差别在 allowlist 口径：
   条目＝「路径<TAB>行内容哈希<TAB>命中词」，三者同时吻合才排除；**行内容一变哈希即变，条目自动失效、须重审**。

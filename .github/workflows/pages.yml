@@ -1,4 +1,4 @@
-# GitHub Pages 部署（STUDIO-002 §3，补丁1 启用）：推到 main 即部署，也可手动触发。
+# GitHub Pages 部署（内部工单 §3，内部工单启用）：推到 main 即部署，也可手动触发。
 # 部署前的检查：页面与生成器一致；已列的去处地址都不为空（--strict）。
 # 自定义域名在仓设置的 Pages 里配；site/CNAME 只是留底，Actions 部署不读它。
 name: pages

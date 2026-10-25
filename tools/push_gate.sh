@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# push_gate.sh —— 推送闸唯一入口（PG-002-X2 补丁2 §4）：凭证审计 → gitleaks 全史 → push，任一步非零即停。
+# push_gate.sh —— 推送闸唯一入口（内部工单 §4）：凭证审计 → gitleaks 全史 → push，任一步非零即停。
 # 起因：2026-09-26、09-27 两次手工把检查器接到管道后面，取到的是管道末端的退出码，命中没有拦住推送。
 #       此后推送只走本入口；不手工串 audit／gitleaks／push，不把检查器的输出接管道。
 # 本文件在 dream-os（00_portfolio/tools/）与 proving-ground（tools/）逐字相同；同目录须有 audit_push.py。

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""build_site.py —— 生成 crescens.one 一页站 site/index.html（STUDIO-002 §3；仅标准库）。
+"""build_site.py —— 生成 crescens.one 一页站 site/index.html（内部工单 §3；仅标准库）。
 
 页面上的图和字都从 brand/ 里取，不手打：
   标识      ＝ brand/crescens/night-zh/avatar-800.svg 的内容，内联
   字标与两行字＝ brand/crescens/night-{zh,en}/banner-youtube-2560x1440.svg 里文字块的轮廓，内联
   两声文案   ＝ brand/build/crescens.py 的 TAGLINE（只用来写无障碍说明与页面描述，不画成字）
-去处读 tools/site_links.json：列在里面且有地址的才上页面，没地址的不列（STUDIO-002 补丁1 §2）。
+去处读 tools/site_links.json：列在里面且有地址的才上页面，没地址的不列（内部工单 §2）。
 accounts 里标了 "text": true 的一条没有网址，只列文字、不带链接。
 邮箱的用户与域名两段分开写进页面，由页面脚本拼接，完整地址不落盘。
 
@@ -24,7 +24,7 @@ OUT = os.path.join(ROOT, "site", "index.html")
 WORDMARK = "crescens.one"   # 只进 <title> 与无障碍说明；页面上看到的字标是轮廓
 PAD = 6                     # 文字块外接框四周留白（横幅坐标系下的像素）
 
-# 页面不许出现的字眼（STUDIO-002 §3）
+# 页面不许出现的字眼（内部工单 §3）
 # 头一个词用转义写，免得本文件自己命中仓里的字眼检查
 BANNED_ZH = ("\u516c\u53f8", "工作", "服务", "合作", "上班")
 BANNED_EN = re.compile(r"\b(compan(y|ies)|works?|working|services?|business(es)?|hir(e|ing)|jobs?|cooperat\w*|partner\w*)\b", re.I)

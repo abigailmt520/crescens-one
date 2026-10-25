@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# regen.sh —— crescens.one 标识件再生成（STUDIO-002 补丁1 §2）：装依赖 → 备 Noto Serif CJK 2.002 → 原样跑 build_crescens.py。
+# regen.sh —— crescens.one 标识件再生成（内部工单 §2）：装依赖 → 备 Noto Serif CJK 2.002 → 原样跑 build_crescens.py。
 # 起因：build_crescens.py 在 macOS 上直接跑不起来（缺 uharfbuzz、cairosvg；brand.py 里 Noto 目录写的是 Linux 路径）。
 #       三个生成脚本不改；本脚本在导入 brand 之后把 Noto 目录改指到本机，再执行 build_crescens.py。
 # 用法（任意目录执行）：

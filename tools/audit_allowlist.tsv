@@ -1,6 +1,6 @@
-# crescens-one 凭证审计 allowlist（STUDIO-002）：路径<TAB>行内容哈希(sha256前16位)<TAB>命中词；行一变即失效须重审。
+# crescens-one 凭证审计 allowlist（内部工单）：路径<TAB>行内容哈希(sha256前16位)<TAB>命中词；行一变即失效须重审。
 # 只有一组：审计脚本自身 10 处（词表正则与自测样例）。条目自 proving-ground tools/audit_allowlist.tsv 第二组逐字复制，
-# 两仓的 tools/audit_push.py 逐字相同，所以行哈希相同。2026-09-29 CC 复制，STUDIO-002 补丁1 追认；新增条目仍须 CSO。
+# 两仓的 tools/audit_push.py 逐字相同，所以行哈希相同。2026-09-29 维护者复制，内部工单追认；新增条目仍须审定方。
 # tools/audit_push.py:6
 tools/audit_push.py	ef5fc12a08ec4452	secret
 # tools/audit_push.py:29
